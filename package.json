@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cloudflare": "opennextjs-cloudflare build",
-    "deploy:cloudflare": "wrangler deploy",
+    "build:cloudflare": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler deploy",
     "start": "next start",
     "lint": "next lint"
   },

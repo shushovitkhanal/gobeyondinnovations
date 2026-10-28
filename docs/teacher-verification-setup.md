@@ -37,8 +37,10 @@ Create a private R2 bucket for source certificate files. Store only the R2 objec
 ## 5. Publish
 
 ```bash
-npm run build:cloudflare
 npm run deploy:cloudflare
 ```
+
+`deploy:cloudflare` runs the OpenNext build before deploying, so the required
+`.open-next/worker.js` bundle is always present for Wrangler.
 
 Before publishing, protect the future `/admin/*` and `/api/admin/*` routes with Cloudflare Access. Add rate limiting and Turnstile to `/api/verify` before opening email lookup to a large audience.
