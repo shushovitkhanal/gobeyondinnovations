@@ -1,0 +1,74 @@
+Code to add new teacher entry
+
+INSERT INTO teachers (
+  id,
+  verification_id,
+  display_name,
+  status,
+  approved_subjects,
+  verified_at,
+  valid_until,
+  public_display_consent
+) VALUES (
+  'teacher-000001',
+  'GBI-T-000001',
+  'Asha Sharma',
+  'verified',
+  '["AI Foundations", "Cyber Safety"]',
+  '2026-10-28',
+  '2027-10-28',
+  1
+);
+
+---------------------------------------------------
+Code to add verified credential
+
+INSERT INTO credentials (
+  id,
+  teacher_id,
+  credential_title,
+  issuing_organization,
+  issued_at,
+  is_verified,
+  reviewed_by,
+  reviewed_at
+) VALUES (
+  'credential-000001',
+  'teacher-000001',
+  'GoBeyond Teacher Training: AI Foundations',
+  'GoBeyond Innovations',
+  '2026-10-28',
+  1,
+  'admin@gobeyond.com.np',
+  '2026-10-28'
+);
+
+---------------------------------------------------
+
+To check records exist
+
+SELECT
+  verification_id,
+  display_name,
+  status,
+  valid_until
+FROM teachers;
+
+---------------------------------------------------
+
+Run this in terminal to get SHA-256 encrypted email address
+
+read -s "GBI_SECRET?Paste EMAIL_LOOKUP_SECRET: "
+echo
+printf '%s' 'email address' | openssl dgst -sha256 -hmac "$GBI_SECRET"
+unset GBI_SECRET
+
+The terminal will ask you for EMAIL_LOOKUP_SECRET
+
+---------------------------------------------------
+
+To add encrypted email address
+
+UPDATE teachers
+SET email_lookup_hash = 'PASTE-HASH-HERE'
+WHERE verification_id = 'GBI-T-000001';
