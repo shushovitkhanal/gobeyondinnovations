@@ -10,5 +10,12 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "TEACHER_DB",
+      "database_name": "gobeyond-teacher-verification",
+      "database_id": "c136c38f-33a1-4fd8-8717-a18e1bd4fefd"
+    }
+  ]
 }
