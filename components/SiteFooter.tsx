@@ -1,0 +1,5 @@
+import Image from "next/image";
+
+export function SiteFooter() {
+  return <footer id="contact" className="bg-ink py-16 text-white"><div className="mx-auto grid w-[min(1180px,calc(100%-2rem))] gap-10 md:grid-cols-[1.2fr_1fr]"><div><Image src="/brands/gobeyond-logo.png" width={150} height={70} alt="GoBeyond Innovations" className="h-16 w-auto rounded-xl bg-white p-1" /><h2 className="mt-8 max-w-xl text-4xl font-extrabold tracking-[-.07em] sm:text-6xl">Bring future-ready learning to your school.</h2></div><div className="self-end"><p className="eyebrow text-blue-200">START A CONVERSATION</p><a href="mailto:hello@gobeyond.com.np" className="mt-5 block text-2xl font-bold underline decoration-cobalt decoration-2 underline-offset-8">hello@gobeyond.com.np</a><a href="/verify" className="mt-7 inline-block text-sm font-bold text-blue-200 transition hover:text-white">Verify a trained teacher →</a><p className="mt-12 text-xs text-white/55">© 2026 GoBeyond Innovations · Nepal</p></div></div></footer>;
+}
